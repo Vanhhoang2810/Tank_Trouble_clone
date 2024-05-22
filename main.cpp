@@ -61,10 +61,12 @@ int point1 = 0, point2 = 0;
 vector<Bullet> bullets;
 vector<vector<int>> maze(MAZE_HEIGHT, vector<int>(MAZE_WIDTH, 0)); // Initialize maze with all walls
 
+// Checking collision between 2 two rectangles
 bool checkCollision(const SDL_Rect& a, const SDL_Rect& b) {
     return SDL_HasIntersection(&a, &b);
 }
 
+//a 2d array for the maze
 void generateMaze() {
     maze = {
         {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
@@ -80,6 +82,7 @@ void generateMaze() {
     };
 }
 
+// Check if a rect collides with the maze walls 
 bool checkMazeCollision(const SDL_Rect& rect) {
     int left = rect.x / WALL_WIDTH;
     int right = (rect.x + rect.w) / WALL_WIDTH;
@@ -99,6 +102,7 @@ bool checkMazeCollision(const SDL_Rect& rect) {
     return false;
 }
 
+// From the 2d array, render the maze walls 
 void renderMaze() {
     SDL_Rect wallRect; // Declare wallRect outside the loop
     for (int y = 0; y < MAZE_HEIGHT; ++y) {
@@ -132,6 +136,7 @@ void renderMaze() {
     }
 }
 
+// Shoot a bullet from a tank
 void shootBullet(int tankX, int tankY, float angle, int& timer, int tankID) {
     if (timer >= FIRE_RATE) {
         Bullet bullet;
@@ -148,6 +153,7 @@ void shootBullet(int tankX, int tankY, float angle, int& timer, int tankID) {
     }
 }
 
+// Check for bullet collision with tanks and update score
 void bulletCollision() {
     for (int i = 0; i < bullets.size(); i++) {
         if (bullets[i].active) {
@@ -184,6 +190,7 @@ void bulletCollision() {
     }
 }
 
+//render the bullets
 void renderBullet() {
     for (int i = 0; i < bullets.size(); i++) {
         if(bullets[i].active){
@@ -192,6 +199,7 @@ void renderBullet() {
     }
 }
 
+//update bullet positions and handle collisions with and borders
 void updateBullet() {
     for (int i = 0; i < bullets.size(); i++) {
         if (bullets[i].active) {
@@ -211,6 +219,7 @@ void updateBullet() {
     bullets.erase(remove_if(bullets.begin(), bullets.end(), [](const Bullet& b) { return !b.active; }), bullets.end());
 }
 
+// Keep the tanks within the boundaries                
 void keepInWindow(SDL_Rect& obj1, SDL_Rect& obj2, int windowWidth, int windowHeight) {
     if (obj1.x < 0) {
         obj1.x = 0;
@@ -239,6 +248,7 @@ void keepInWindow(SDL_Rect& obj1, SDL_Rect& obj2, int windowWidth, int windowHei
     }
 }
 
+// collision between 2 rects
 void collision(SDL_Rect& obj1, SDL_Rect& obj2) {
     bool colliding = true;
     while (colliding) {
@@ -268,6 +278,7 @@ void collision(SDL_Rect& obj1, SDL_Rect& obj2) {
     }
 }
 
+// handling the inputs 
 bool handleInput(SDL_Event ev)
 {
     while (SDL_PollEvent(&ev)) {
@@ -329,6 +340,7 @@ bool handleInput(SDL_Event ev)
     return true;
 }
 
+// display who wins after 
 void displayWinScreen(SDL_Renderer* renderer, const std::string& winner, const std::string& replayOption, const std::string& exitOption) {
     // Load font
     TTF_Init();
@@ -380,6 +392,7 @@ void displayWinScreen(SDL_Renderer* renderer, const std::string& winner, const s
     TTF_Quit();
 }
 
+// render scores
 void renderScores(SDL_Renderer* renderer, TTF_Font* font, int score1, int score2) {
     // Set up colors
     SDL_Color white = { 255, 255, 255 };

@@ -1,0 +1,28 @@
+# depslib dependency file v1.0
+1716300538 source:c:\users\laptop\documents\ltnc\tank\main.cpp
+	<iostream>
+	<SDL.h>
+	<SDL_image.h>
+	<SDL_ttf.h>
+	<vector>
+	<cmath>
+	<ctime>
+	<algorithm>
+
+1715056584 source:c:\users\laptop\documents\ltnc\tank\map.cpp
+	"map.h"
+
+1715057180 c:\users\laptop\documents\ltnc\tank\map.h
+
+1715064090 c:\users\laptop\documents\ltnc\tank\movement.h
+
+1715064090 c:\users\laptop\documents\ltnc\tank\collision.h
+
+1715064267 c:\users\laptop\documents\ltnc\tank\input.h
+	<SDL.h>
+
+1715064090 c:\users\laptop\documents\ltnc\tank\bullet.h
+
+1715064985 source:c:\users\laptop\documents\ltnc\tank\input.cpp
+	"Input.h"
+

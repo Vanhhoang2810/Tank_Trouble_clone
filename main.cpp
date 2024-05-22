@@ -54,7 +54,6 @@ bool hit2 = false;
 
 
 int timer1 = 0, timer2 = 0;
-int invulnerable1 = 0, invulnerable2 = 0;
 int point1 = 0, point2 = 0;
 
 vector<Bullet> bullets;
@@ -288,25 +287,25 @@ bool handleInput(SDL_Event ev)
             case SDL_KEYDOWN:
                 if (ev.key.keysym.sym == SDLK_ESCAPE) {
                     return false;
-                } else if (ev.key.keysym.sym == SDLK_UP && invulnerable1 == 0) {
+                } else if (ev.key.keysym.sym == SDLK_UP) {
                     up2 = true;
-                } else if (ev.key.keysym.sym == SDLK_DOWN && invulnerable1 == 0) {
+                } else if (ev.key.keysym.sym == SDLK_DOWN) {
                     down2 = true;
-                } else if (ev.key.keysym.sym == SDLK_LEFT && invulnerable1 == 0) {
+                } else if (ev.key.keysym.sym == SDLK_LEFT) {
                     left2 = true;
-                } else if (ev.key.keysym.sym == SDLK_RIGHT && invulnerable1 == 0) {
+                } else if (ev.key.keysym.sym == SDLK_RIGHT) {
                     right2 = true;
-                } else if (ev.key.keysym.sym == SDLK_w && invulnerable2 == 0) {
+                } else if (ev.key.keysym.sym == SDLK_w) {
                     up1 = true;
-                } else if (ev.key.keysym.sym == SDLK_s && invulnerable2 == 0) {
+                } else if (ev.key.keysym.sym == SDLK_s) {
                     down1 = true;
-                } else if (ev.key.keysym.sym == SDLK_a && invulnerable2 == 0) {
+                } else if (ev.key.keysym.sym == SDLK_a) {
                     left1 = true;
-                } else if (ev.key.keysym.sym == SDLK_d && invulnerable2 == 0) {
+                } else if (ev.key.keysym.sym == SDLK_d) {
                     right1 = true;
-                } else if (ev.key.keysym.sym == SDLK_KP_1 && invulnerable1 == 0) {
+                } else if (ev.key.keysym.sym == SDLK_KP_1) {
                     shoot2 = true;
-                } else if (ev.key.keysym.sym == SDLK_SPACE && invulnerable2 == 0) {
+                } else if (ev.key.keysym.sym == SDLK_SPACE) {
                     shoot1 = true;
                 }
                 break;

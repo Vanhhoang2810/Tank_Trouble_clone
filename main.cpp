@@ -52,7 +52,6 @@ bool right2 = false;
 bool shoot2 = false;
 bool hit2 = false;
 
-bool replay = false;
 
 int timer1 = 0, timer2 = 0;
 int invulnerable1 = 0, invulnerable2 = 0;

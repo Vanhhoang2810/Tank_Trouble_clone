@@ -38,7 +38,6 @@ For the sake of simplicity and for my sanity, you can download all the file you 
 ## Things that i wish i have time to fix
 - The wall is a little thicker than my expectation
 - The collision between the tanks are a little weird, since the red tank can push the green tank
-- My idiotic friend
   
 ## Acknowledgements and Credits
 [Lazy Foo's SDL Tutorials](https://lazyfoo.net/tutorials/SDL/index.php) have been very helpful and is one of the best, though a bit old, way to get in to SDL development in specific, and game development in general.
